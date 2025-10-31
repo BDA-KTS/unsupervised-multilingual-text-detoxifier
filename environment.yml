@@ -1,27 +1,18 @@
-name: mdtox-binder
+name: detoxifier
 channels:
+  - pytorch
   - conda-forge
   - defaults
 dependencies:
   - python=3.9
-  - pip<24.1            # avoid omegaconf metadata issues
-  - numpy
-  - pandas
-  - matplotlib
-  - scikit-learn
-  - pytorch=1.12.1       # torch + compatible torchvision/torchaudio
+  - torch=1.12.1
   - torchvision=0.13.1
   - torchaudio=0.12.1
+  - pip
   - pip:
-      # Fix omegaconf first
-      - omegaconf==2.0.6
-      # Fairseq + dependencies
-      - fairseq==0.12.2
       - transformers==4.9.2
-      - datasets==2.13.0
       - sentence-transformers==2.1.0
-      - fastBPE==0.1.0
-      - sacremoses==0.0.53
+      - datasets==2.13.0
       - textblob
       - langdetect
       - git+https://github.com/bheinzerling/pyrouge.git
