@@ -1,16 +1,17 @@
 name: detoxifier
 channels:
-  - pytorch
   - conda-forge
   - defaults
 
 dependencies:
   - python=3.10
-  - torch>=1.12,<2
-  - torchaudio>=0.12,<2
-  - transformers
   - numpy
   - pandas
   - scikit-learn
   - tqdm
   - jupyterlab
+  - pip
+  - pip:
+      - torch>=1.12,<2
+      - torchaudio>=0.12,<2
+      - transformers
