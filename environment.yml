@@ -1,7 +1,6 @@
 name: detoxifier
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.9
   - pip
@@ -13,16 +12,16 @@ dependencies:
   - tqdm>=4.62,<4.65
   - sentencepiece>=0.1.96
   - pip:
-      - torch>=2.1.0
-      - torchvision>=0.16.0
-      - torchaudio>=2.1.0
-      - transformers>=4.28
-      - datasets>=2.13
-      - sentence-transformers==2.1.0
-      - fairseq==0.12.2
-      - fastBPE @ git+https://github.com/glample/fastBPE.git
-      - sacremoses==0.0.53
+      - torch>=2.1,<2.3
+      - torchvision>=0.16,<0.17
+      - torchaudio>=2.1,<2.3
+      - transformers>=4.36,<4.40
+      - datasets>=2.14,<3
+      - sentence-transformers>=2.2,<3
       - textblob
       - langdetect
       - git+https://github.com/bheinzerling/pyrouge.git
-
+build:
+  noarch: python
+  script:
+    - python -m nltk.downloader punkt punkt_tab
