@@ -19,13 +19,22 @@ ln -s ~/.quarto/opt/quarto/bin/quarto ~/.local/bin/quarto
 # create the proper pandoc symlink to enable visual editor in Quarto extension
 ln -s ~/.quarto/opt/quarto/bin/tools/x86_64/pandoc ~/.quarto/opt/quarto/bin/tools/pandoc
 
-
 echo
 echo Installed Quarto
 echo
 
 # install required python packages
 python3 -m pip install jupyterlab-quarto
+
+echo
+echo Installing NLTK punkt_tab resource
+echo
+
+# create directory for NLTK data in environment path
+mkdir -p /srv/conda/envs/notebook/nltk_data
+
+# download punkt_tab into conda environment path
+python3 -m nltk.downloader -d /srv/conda/envs/notebook/nltk_data punkt_tab
 
 echo
 echo Completed
