@@ -19,4 +19,6 @@ dependencies:
       - datasets>=2.14,<3
       - sentence-transformers>=2.2,<3
       - textblob
+      - langdetect
       - git+https://github.com/bheinzerling/pyrouge.git
+
