@@ -3,16 +3,14 @@ channels:
   - pytorch
   - conda-forge
   - defaults
+
 dependencies:
-  - python=3.9
-  - torch=1.12.1
-  - torchvision=0.13.1
-  - torchaudio=0.12.1
-  - pip
-  - pip:
-      - transformers==4.9.2
-      - sentence-transformers==2.1.0
-      - datasets==2.13.0
-      - textblob
-      - langdetect
-      - git+https://github.com/bheinzerling/pyrouge.git
+  - python=3.10
+  - torch>=1.12,<2
+  - torchaudio>=0.12,<2
+  - transformers
+  - numpy
+  - pandas
+  - scikit-learn
+  - tqdm
+  - jupyterlab
